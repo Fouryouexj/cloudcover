@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudcover Insurance - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-container">
+                <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active">
+                    <a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#motor"><i class="fas fa-car"></i> Motor Insurance</a>
+                </li>
+                <li>
+                    <a href="#travel"><i class="fas fa-plane"></i> Travel Insurance</a>
+                </li>
+                <li>
+                    <a href="#medical"><i class="fas fa-heartbeat"></i> Medical Insurance</a>
+                </li>
+                <li>
+                    <a href="#life"><i class="fas fa-shield-alt"></i> Life Insurance</a>
+                </li>
+                <li>
+                    <a href="#funeral"><i class="fas fa-church"></i> Funeral Insurance</a>
+              
+                <li class="logout">
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="admin-header">
+                <div class="search-bar">
+                    <input type="search" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="admin-profile">
+                    <span class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">1</span>
+                    </span>
+                    <img src="img/admin-avatar.jpg" alt="Admin" class="admin-avatar">
+                    <span class="admin-name">dev 4ux</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Overview -->
+            <section class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon motor">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Motor Insurance</h3>
+                        <p>32 New Quotes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon travel">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Travel Insurance</h3>
+                        <p>18 New Quotes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon medical">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Medical Insurance</h3>
+                        <p>45 New Quotes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon life">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Life Insurance</h3>
+                        <p>27 New Quotes</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Quotes -->
+            <section class="recent-quotes">
+                <h2>Recent Insurance Quotes</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quote ID</th>
+                                <th>Customer Name</th>
+                                <th>Insurance Type</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quotes-table-body">
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Recent Payments -->
+            <section class="recent-payments">
+                <h2>Recent Payments</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Insurance Type</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="payments-table-body">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="admin.js"></script>
+
+    <script>
+       
+    </script>
+</body>
+</html>

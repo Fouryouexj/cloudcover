@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Insurance | Secure Your Trip</title>
+    <link rel="stylesheet" href="travel-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="logo">
+            <h1>Travel Insurance Cover</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="CLOUD COVER HTML.html">Home</a></li>
+                <li><a href="#quote">Get Cover</a></li>
+                <li><a href="about.html"> About Us</a></li>
+                <li><a href="policy.html"> Privacy & Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Why Travel Insurance?</h2>
+            <p>Traveling around the globe and exploring the wonders of the world has become easier. 
+               Whether for business or leisure, you need essentials for a smooth trip. 
+               <strong>Globetrotter Travel Cover</strong> offers peace of mind, security for unexpected emergencies, 
+               and 24/7 assistance wherever you travel.</p>
+        </div>
+    </section>
+
+    <section id="quote" class="quote-section">
+        <div class="quote-container">
+            <h2>✈️ Get Your Travel Insurance Quote</h2>
+            <div class="progress-bar">
+                <div class="step active">Personal Info</div>
+                <div class="step">Trip Details</div>
+                <div class="step">Contact Info</div>
+            </div>
+            
+            <form id="travel-quote-form">
+                <div class="form-sections">
+                    <!-- Personal Information Section -->
+                    <div class="form-section active" id="personal-info">
+                        <h3>Personal Information</h3>
+                        <div class="form-group">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" id="full_name" name="full_name" required 
+                                   placeholder="Enter full name">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" required>
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="num_dependents">Dependents</label>
+                            <div class="dependent-counter">
+                                <button type="button" class="counter-btn minus" aria-label="Decrease">-</button>
+                                <input type="number" id="num_dependents" name="num_dependents" value="0" min="0" max="10" readonly>
+                                <button type="button" class="counter-btn plus" aria-label="Increase">+</button>
+                            </div>
+                    
+                           
+                        </div>
+                    </div>
+    
+                    <!-- Trip Details Section -->
+                    <div class="form-section" id="trip-details">
+                        <h3>Trip Details</h3>
+                        <div class="form-group">
+                            <label for="traveling_from">Departure Country</label>
+                            <input type="text" id="traveling_from" name="traveling_from" 
+                                   required placeholder="Country of departure">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="traveling_to">Destination</label>
+                            <input type="text" id="traveling_to" name="traveling_to" 
+                                   required placeholder="Country of destination">
+                            <i class="fas fa-plane-arrival"></i>
+                        </div>
+                        
+                        <div class="date-range-group">
+                            <div class="form-group">
+                                <label for="departure_date">Departure Date</label>
+                                <input type="date" id="departure_date" name="departure_date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="return_date">Return Date</label>
+                                <input type="date" id="return_date" name="return_date" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="travel_purpose">Purpose of Travel</label>
+                            <select id="travel_purpose" name="travel_purpose" required>
+                                <option value="">-- Select Purpose --</option>
+                                <option>Business</option>
+                                <option>Leisure</option>
+                                <option>Education</option>
+                                <option>Medical</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <!-- Contact Information Section -->
+                    <div class="form-section" id="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="tel" id="phone_number" name="phone_number" 
+                                   required placeholder="Enter phone number">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email_address">Email Address</label>
+                            <input type="email" id="email_address" name="email_address" 
+                                   required placeholder="Enter email address">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-navigation">
+                    <button type="button" class="btn prev" style="display: none;">Previous</button>
+                    <button type="button" class="btn next">Next</button>
+                    <button type="submit" class="btn submit" style="display: none;">Get Quote</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo">
+            </div>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Our Services</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Cloudcover Insurance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+   
+   
+    <script src="storage.js"></script>
+    <script src="travel.js"></script>
+</body>
+</html>

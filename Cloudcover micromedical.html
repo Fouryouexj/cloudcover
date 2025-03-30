@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance | Micro Health Cover</title>
+    <link rel="stylesheet" href="medical-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="logo">
+            <h1>Medical Insurance - Micro Health Cover</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="CLOUD COVER HTML.html">Home</a></li>
+                <li><a href="#quote">Get Cover</a></li>
+                <li><a href="about.html"> About Us</a></li>
+                <li><a href="policy.html"> Privacy & Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+
+    <section class="insurance-info">
+        <h2>What is Micro Medical Insurance?</h2>
+        <p>
+            Micro medical insurance is a specialized form of health coverage designed to provide affordable 
+            healthcare solutions to low-income individuals and families. It is tailored to meet the needs of 
+            those who may not have access to conventional health insurance due to financial constraints, 
+            lack of awareness, or geographical limitations.
+        </p>
+
+        <h3>Key Features of Micro Medical Insurance:</h3>
+        <ul>
+            <li><strong>Affordability:</strong> Low premiums for accessibility.</li>
+            <li><strong>Simplified Processes:</strong> Minimal documentation & easy claims.</li>
+            <li><strong>Community-Based Models:</strong> Works through cooperatives & microfinance groups.</li>
+            <li><strong>Limited Coverage:</strong> Covers outpatient care, hospitalization, minor surgeries.</li>
+            <li><strong>Flexible Payment Plans:</strong> Small installment payments to fit irregular incomes.</li>
+        </ul>
+    </section>
+    <section id="quote" class="quotation-form">
+        <h2>Get a Medical Insurance Quote</h2>
+        
+        <div class="form-steps">
+            <div class="step active">Personal Details</div>
+            <div class="step">Coverage Options</div>
+            <div class="step">Review & Submit</div>
+        </div>
+    
+        <form id="quote-form">
+            <!-- Section 1: Personal Details -->
+            <div class="form-section active" id="section-1">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="full_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Principal's Age</label>
+                        <input type="number" name="principal_age" min="18" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Dependents</label>
+                        <input type="number" name="num_dependents" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Older Child's Age</label>
+                        <input type="number" name="child_age" max="18">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Section 2: Coverage Options -->
+            <div class="form-section" id="section-2">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Frequency</label>
+                        <select name="payment_frequency" required>
+                            <option value="">Select Frequency</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="annually">Annually</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" name="start_date" required>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Section 3: Review -->
+            <div class="form-section" id="section-3">
+                <div class="review-summary">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+    
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="prevBtn">Previous</button>
+                <button type="button" class="btn" id="nextBtn">Next Step</button>
+            </div>
+        </form>
+    </section>
+
+
+   
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Coverage Details</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> +254 792643 472</li>
+                            <li><i class="fas fa-envelope"></i> fouryouex@outlook.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cloudcover Insurance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="storage.js"></script>
+    <script src="medical.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="medical-script.js"></script>
+    
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Insurance | Secure Your Future</title>
+    <link rel="stylesheet" href="life-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="logo">
+            </div>
+            <h1>Life Insurance Cover</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="CLOUD COVER HTML.html">Home</a></li>
+                <li><a href="#quote">Get Cover</a></li>
+                <li><a href="about.html"> About Us</a></li>
+                <li><a href="policy.html"> Privacy & Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Secure Your Family’s Future with a Reliable Life Cover</h2>
+            <p>Get financial protection and peace of mind for your loved ones.</p>
+        </div>
+    </section>
+
+    <section class="policy-details">
+        <h2>Life Cover (Term Assurance)</h2>
+        <p>This policy provides pure life cover for loan security, key persons in a company, and inheritance for dependents.</p>
+        
+        <h3>Eligibility:</h3>
+        <ul>
+            <li>Minimum age: 18 years</li>
+            <li>Maximum age: 70 years</li>
+            <li>Maximum maturity age: 75 years</li>
+        </ul>
+
+        <h3>Premium Payment:</h3>
+        <ul>
+            <li>Premiums depend on age, cover level, and policy term.</li>
+            <li>Payment options: Monthly, Quarterly, Semi-Annually, Annually.</li>
+            <li>Payment methods: Standing Order, Cheque, Direct Debit, M-Pesa, Salary Check-off.</li>
+        </ul>
+    </section>
+
+    <section class="riders">
+        <h2>Additional Benefits (Riders)</h2>
+        <div class="riders-grid">
+            <div class="rider-card">
+                <h4>Accidental Death Benefit</h4>
+                <p>An additional amount equal to the sum assured is paid if death occurs due to an accident.</p>
+            </div>
+            <div class="rider-card">
+                <h4>Total & Permanent Disability</h4>
+                <p>A lump sum is paid if you become permanently disabled due to illness or accident.</p>
+            </div>
+            <div class="rider-card">
+                <h4>Waiver of Premiums</h4>
+                <p>All future premiums are waived if you become totally disabled.</p>
+            </div>
+            <div class="rider-card">
+                <h4>Accident Hospitalization Benefit</h4>
+                <p>Medical costs reimbursed up to KShs. 500,000 if hospitalized due to an accident.</p>
+            </div>
+            <div class="rider-card">
+                <h4>Retrenchment Rider</h4>
+                <p>Keeps your policy active in case of retrenchment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="quote-section">
+        <h2>Get a Life Insurance Quote</h2>
+        <form id="life-insurance-form">
+            <div class="grid-container">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="full_name" required placeholder="Enter full name">
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label>Your Age *</label>
+                    <input type="number" name="your_age" required min="18" max="70" placeholder="Enter age">
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label>Coverage Amount (KShs) *</label>
+                    <input type="number" name="coverage_amount" required placeholder="Enter amount">
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label>Policy Term (Years) *</label>
+                    <input type="number" name="policy_term" required min="5" max="20" placeholder="Enter term">
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" name="phone_number" required placeholder="Enter phone">
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email_address" required placeholder="Enter email">
+                    <small class="error-message"></small>
+                </div>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn">Submit & Get Quote</button>
+                <button type="button" class="btn btn-secondary">Download Quote</button>
+            </div>
+  
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="footer-logo">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="footer-text">&copy; 2025 Cloudcover Insurance. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="storage.js"></script>
+    <script src="life.js"></script>
+    <script>
+    </script>
+
+</body>
+</html>
