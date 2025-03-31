@@ -76,16 +76,22 @@
             <div class="logo-wrapper">
                 <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="logo">
             </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Our Products</a></li>
-                <li><a href="#partners">Our Partners</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="about.html"> About Us</a></li>
-                <li><a href="policy.html"> Privacy & Policy</a></li>
-            </ul>
-        </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#partners">Our Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="policy.html">Privacy & Policy</a></li>
+                </ul>
+            </nav>
     </header>
 
     
@@ -329,7 +335,38 @@ const swiper = new Swiper('.partners-swiper', {
     }, 5000);
 
     return false;
-}
+}document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    const menuLinks = document.querySelectorAll('.main-nav a');
+
+    // Toggle menu
+    mobileMenuBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    });
+
+    // Close menu when clicking links
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            mainNav.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenuBtn.classList.remove('active');
+            mainNav.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+});
+
+
     </script>
 
    

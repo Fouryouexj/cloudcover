@@ -1,5 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize form elements
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    const body = document.body;
+
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when clicking links
+        const menuLinks = mainNav.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                body.classList.remove('no-scroll');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mainNav.classList.contains('active') && 
+                !mainNav.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                body.classList.remove('no-scroll');
+            }
+        });
+    }
     const form = document.getElementById('quote-form');
     const sections = Array.from(document.querySelectorAll('.form-section'));
     const nextBtn = document.getElementById('nextBtn');

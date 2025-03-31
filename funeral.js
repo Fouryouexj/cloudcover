@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    const body = document.body;
+
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when clicking links
+        const menuLinks = mainNav.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                body.classList.remove('no-scroll');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                body.classList.remove('no-scroll');
+            }
+        });
+    }
+
     const form = document.getElementById('funeral-quote-form');
 
     // Validate form data
