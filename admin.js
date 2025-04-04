@@ -6,7 +6,84 @@ class AdminPanel {
         this.initializeEventListeners();
         this.loadDashboard();
         this.initializeSidebar(); 
+        this.notifications = [];
+        this.initializeNotifications();
     }
+
+    initializeNotifications() {
+        // Load existing notifications
+        this.notifications = JSON.parse(localStorage.getItem('admin_notifications') || '[]');
+        this.updateNotificationBadge();
+        this.setupNotificationListener();
+    }
+
+    setupNotificationListener() {
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'insurance_submissions') {
+                const oldSubmissions = JSON.parse(e.oldValue || '[]');
+                const newSubmissions = JSON.parse(e.newValue || '[]');
+                
+                if (newSubmissions.length > oldSubmissions.length) {
+                    const newSubmission = newSubmissions[newSubmissions.length - 1];
+                    this.createNotification(newSubmission);
+                }
+            }
+        });
+    }
+
+    createNotification(submission) {
+        const notification = {
+            id: Date.now(),
+            type: submission.type,
+            message: `New ${submission.type} insurance application from ${submission.customerName}`,
+            timestamp: new Date().toISOString(),
+            read: false,
+            submissionId: submission.id
+        };
+
+        this.notifications.unshift(notification);
+        localStorage.setItem('admin_notifications', JSON.stringify(this.notifications));
+        this.updateNotificationBadge();
+        this.showNotificationToast(notification);
+    }
+
+    updateNotificationBadge() {
+        const unreadCount = this.notifications.filter(n => !n.read).length;
+        const badge = document.querySelector('.notifications .badge');
+        if (badge) {
+            badge.textContent = unreadCount;
+            badge.style.display = unreadCount ? 'block' : 'none';
+        }
+    }
+
+    showNotificationToast(notification) {
+        const toast = document.createElement('div');
+        toast.className = 'notification-toast';
+        toast.innerHTML = `
+            <div class="toast-content">
+                <i class="fas fa-bell"></i>
+                <div class="toast-message">
+                    <p>${notification.message}</p>
+                    <small>${new Date(notification.timestamp).toLocaleString()}</small>
+                </div>
+            </div>
+            <button class="toast-close">×</button>
+        `;
+
+        document.body.appendChild(toast);
+
+        // Auto remove toast after 5 seconds
+        setTimeout(() => {
+            toast.classList.add('fade-out');
+            setTimeout(() => toast.remove(), 300);
+        }, 5000);
+
+        // Close button functionality
+        toast.querySelector('.toast-close').addEventListener('click', () => {
+            toast.remove();
+        });
+    }
+
 
     initializeEventListeners() {
         // Navigation handling
@@ -439,6 +516,17 @@ tbody.innerHTML = submissions.map(sub => `
         } else {
             this.loadInsuranceSection(this.currentSection, filtered);
         }
+    }
+
+    getStats() {
+        const submissions = this.storageManager.getSubmissions();
+        return {
+            motor: submissions.filter(s => s.type === 'motor').length,
+            travel: submissions.filter(s => s.type === 'travel').length,
+            medical: submissions.filter(s => s.type === 'medical').length,
+            life: submissions.filter(s => s.type === 'life').length,
+            student: submissions.filter(s => s.type === 'student').length // Add this line
+        };
     }
 }
 

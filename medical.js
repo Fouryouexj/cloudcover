@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (mainNav.classList.contains('active') && 
-                !mainNav.contains(e.target) && 
-                !mobileMenuBtn.contains(e.target)) {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                 mobileMenuBtn.classList.remove('active');
                 mainNav.classList.remove('active');
                 body.classList.remove('no-scroll');
             }
         });
     }
+
+    
     const form = document.getElementById('quote-form');
     const sections = Array.from(document.querySelectorAll('.form-section'));
     const nextBtn = document.getElementById('nextBtn');

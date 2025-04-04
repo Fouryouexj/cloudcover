@@ -1,218 +1,239 @@
-* {
+:root {
+    --primary-color: #0073cf;
+    --secondary-color: #00529b;
+    --accent-color: #FFB800;
+    --gradient-primary: linear-gradient(135deg, #0073cf, #0091ff);
+    --gradient-secondary: linear-gradient(45deg, #00529b, #0073cf);
+    --light-blue: #e8f5ff;
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --text-dark: #1f2937;
+    --shadow-sm: 0 2px 8px rgba(0, 115, 207, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 115, 207, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 115, 207, 0.2);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-
-/* Header Styles */
-#hh {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Header Styles */
+  #hh {
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
     padding: 1rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-}
-
-.header-container {
+  }
+  
+  .header-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo-wrapper img {
+    background-color: var(--gradient-primary);
+  }
+  
+  .logo-wrapper img {
     height: 60px;
-}
-
-nav ul {
+  }
+  
+  nav ul {
     display: flex;
     list-style: none;
     gap: 2rem;
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-dark);
     font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    color: #0066cc;
-}
-
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(rgba(0,102,204,0.9), rgba(0,102,204,0.9)), url('background.jpg');
+    transition: var(--transition);
+  }
+  
+  nav ul li a:hover, 
+  nav ul li a.active {
+    color: var(--primary-color);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(rgba(0, 115, 207, 0.9), rgba(0, 82, 155, 0.9)), url('background.jpg');
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--white);
     text-align: center;
     margin-top: 80px;
-}
-
-.hero-section h1 {
+  }
+  
+  .hero-section h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-}
-
-/* About Content */
-.about-content {
+  }
+  
+  /* About Content */
+  .about-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
-}
-
-.welcome-section {
+  }
+  
+  .welcome-section {
     text-align: center;
     margin-bottom: 4rem;
-}
-
-.welcome-section h2 {
-    color: #0066cc;
+  }
+  
+  .welcome-section h2 {
+    color: var(--primary-color);
     margin-bottom: 1rem;
-}
-
-.mission-vision {
+  }
+  
+  .mission-vision {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-bottom: 4rem;
-}
-
-.mission, .vision {
-    background: #f8f9fa;
+  }
+  
+  .mission, 
+  .vision {
+    background: var(--gray-50);
     padding: 2rem;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.mission:hover, .vision:hover {
+    transition: var(--transition);
+  }
+  
+  .mission:hover, 
+  .vision:hover {
     transform: translateY(-5px);
-}
-
-.why-choose {
+  }
+  
+  .why-choose {
     text-align: center;
-}
-
-.features {
+  }
+  
+  .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-}
-
-.feature {
+  }
+  
+  .feature {
     padding: 2rem;
-    background: #f8f9fa;
+    background: var(--gray-50);
     border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.feature:hover {
+    transition: var(--transition);
+  }
+  
+  .feature:hover {
     transform: translateY(-5px);
-}
-
-.feature i {
-    color: #0066cc;
+  }
+  
+  .feature i {
+    color: var(--primary-color);
     font-size: 2rem;
     margin-bottom: 1rem;
-}
-
-/* Footer Styles */
-.footer-container {
-    background: #003366;
-    color: white;
+  }
+  
+  /* Footer Styles */
+  .footer-container {
+    background: var(--secondary-color);
+    color: var(--white);
     padding: 4rem 2rem 1rem;
-}
-
-.footer-main {
+  }
+  
+  .footer-main {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
-}
-
-.footer-brand img {
+  }
+  
+  .footer-brand img {
     height: 60px;
     margin-bottom: 1rem;
-}
-
-.footer-links {
+  }
+  
+  .footer-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-}
-
-.footer-section h4 {
+  }
+  
+  .footer-section h4 {
     margin-bottom: 1rem;
-}
-
-.footer-section ul {
+  }
+  
+  .footer-section ul {
     list-style: none;
-}
-
-.footer-section ul li {
+  }
+  
+  .footer-section ul li {
     margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: white;
+  }
+  
+  .footer-section a {
+    color: var(--white);
     text-decoration: none;
-}
-
-.social-links {
+  }
+  
+  .social-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin: 2rem 0;
-}
-
-.social-icon {
-    color: white;
-    background: rgba(255,255,255,0.1);
+  }
+  
+  .social-icon {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
     width: 40px;
     height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease;
-}
-
-.social-icon:hover {
-    background: #0066cc;
-}
-
-.footer-bottom {
+    transition: var(--transition);
+  }
+  
+  .social-icon:hover {
+    background: var(--primary-color);
+  }
+  
+  .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
     nav ul {
-        display: none;
+      display: none;
     }
     
     .mission-vision {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
     
     .footer-main {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
     
     .footer-links {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
-}
+  }

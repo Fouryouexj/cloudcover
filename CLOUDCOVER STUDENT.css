@@ -28,34 +28,92 @@ body {
     line-height: 1.6;
 }
 
-
+/* Update header styles */
 header {
     background: var(--gradient-primary);
-    color: var(--white);
-    padding: 1.5rem 2rem;
-    position: sticky;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
     box-shadow: var(--shadow-md);
-    display: flex;
-    justify-content: space-between;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
+    flex-shrink: 0;
 }
 
 .logo {
-    width: 120px;
+    width: 60px;
     height: auto;
+    border-radius: 8px;
     transition: var(--transition);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
-.logo:hover {
-    transform: scale(1.05) rotate(-2deg);
+header h1 {
+    color: var(--white);
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Update mobile styles */
+@media (max-width: 768px) {
+    .header-container {
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        order: 1;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--gradient-primary);
+        padding: 80px 2rem 2rem;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        gap: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 40px;
+    }
 }
 
 nav ul {
@@ -87,6 +145,7 @@ nav a:hover {
     background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
     position: relative;
     overflow: hidden;
+    top: 2rem;
 }
 
 .intro::before {
@@ -95,7 +154,7 @@ nav a:hover {
     font-size: 15rem;
     opacity: 0.1;
     right: -2rem;
-    top: -4rem;
+    top: 1rem;
     transform: rotate(15deg);
     animation: float 6s ease-in-out infinite;
 }
@@ -663,5 +722,100 @@ header h1 {
     .main-nav a {
         font-size: 1rem;
         padding: 0.8rem;
+    }
+}
+
+.benefits {
+    padding: 4rem 2rem;
+    background: var(--white);
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.benefits h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.benefits-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    line-height: 1.8;
+}
+
+.benefits-paragraph {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--gray-50);
+    border-radius: 12px;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.benefits-paragraph:hover {
+    transform: translateX(10px);
+    background: var(--light-blue);
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.benefits-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: var(--white);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .benefits {
+        padding: 3rem 1.5rem;
+    }
+
+    .benefits h2 {
+        font-size: 2rem;
+    }
+
+    .benefits-paragraph {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits h2 {
+        font-size: 1.8rem;
+    }
+
+    .benefits-paragraph {
+        padding: 1rem;
     }
 }

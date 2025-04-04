@@ -42,13 +42,21 @@ body {
     padding: 2rem;
     position: fixed;
     height: 100vh;
+    transition: var(--transition);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .logo-container {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
@@ -58,9 +66,12 @@ body {
     background: var(--white);
     padding: 0.3rem;
 }
-
 .nav-links {
     list-style: none;
+    position: relative;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 0.5rem;
 }
 
 .nav-links li {
@@ -87,9 +98,138 @@ body {
     width: 20px;
 }
 
-.logout {
-    margin-top: 3rem;
+.nav-links::-webkit-scrollbar {
+    width: 6px;
 }
+
+.nav-links::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.nav-links::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.nav-links::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.logout {
+    flex-shrink: 0;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+/* Update media queries for responsive design */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar:hover {
+        width: 280px;
+    }
+
+    .nav-links {
+        padding-right: 0;
+    }
+
+    .sidebar:hover .nav-links {
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 250px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .nav-links {
+        padding-right: 0.5rem;
+    }
+}
+/* Update Logout Section Styling */
+.logout {
+    flex-shrink: 0;
+    margin-top: auto;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.logout a:hover {
+    background: rgba(239, 68, 68, 0.2);
+    transform: translateY(-2px);
+}
+
+.logout i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.logout span {
+    font-weight: 500;
+}
+
+/* Update responsive styles for logout */
+@media (max-width: 1200px) {
+    .logout span {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sidebar:hover .logout span {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .logout a {
+        justify-content: center;
+    }
+
+    .sidebar:hover .logout a {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .logout {
+        margin-top: 2rem;
+    }
+
+    .logout span {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .logout a {
+        justify-content: flex-start;
+    }
+}
+
 
 /* Main Content Area */
 .main-content {
@@ -581,5 +721,74 @@ td {
 
     table {
         min-width: 900px; 
+    }
+}
+
+.notification-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: var(--shadow-lg);
+    animation: slideIn 0.3s ease-out;
+    z-index: 1000;
+    max-width: 350px;
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.toast-content {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+}
+
+.toast-content i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.toast-message p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.toast-message small {
+    color: var(--gray-500);
+    font-size: 0.8rem;
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
     }
 }

@@ -6,27 +6,31 @@
     <title>Student Insurance | InternCare</title>
     <link rel="stylesheet" href="CLOUDCOVER STUDENT.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="btn.css">
 </head>
 <body>
 
     <header>
-        <h1>Student Insurance - InternCare</h1>
-        <div class="logo-container">
-            <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="logo">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="img/logo.jpeg" alt="Cloudcover Insurance Logo" class="logo">
+            </div>
+            <h1>Student Insurance - InternCare</h1>
+            <div class="nav-container">
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="policy.html">Privacy & Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <button class="mobile-menu-btn" aria-label="Toggle Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#insurance-form">Get Cover</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="policy.html">Privacy & Policy</a></li>
-            </ul>
-        </nav>
     </header>
 
     <section class="intro">
@@ -35,26 +39,42 @@
             INTERNCARE provides compensation to interns and students on industrial attachment 
             in case of injury or disability caused by violent, accidental, external, and visible events.
         </p>
+        <a href="#insurance-form" class="hero-btn">Apply Now</a>
     </section>
 
     <section class="benefits">
         <h2>What it covers</h2>
-        <p>
-            <strong>Medical Expenses:</strong>Comprehensive coverage for medical treatment resulting from accidents.
-        </p>
-        <p>
-            <strong>Accidental Dental Expenses:</strong>Assistance for dental treatments due to accidents.  <strong>48 hours</strong> 
-            after an accident resulting in death. This ensures timely support during difficult times.
-        </p>
-        <p>
-            <strong>Permanent Disability:</strong> Financial support in case of permanent disability caused by accidents.
-        </p>
-        <p>
-            <strong>Accidental Death: </strong>Providing financial relief to the family in the event of the insured's accidental death.
-        </p>
-        <p>
-            <strong>Last Expense:  </strong>Assisting with the expenses related to the insured's funeral arrangements.
-        </p>
+        <div class="benefits-content">
+            <div class="benefits-paragraph">
+                <i class="benefits-icon fas fa-hospital"></i>
+                <span class="highlight">Medical Expenses</span>
+                Our comprehensive coverage ensures that you're protected in case of accidents during your internship or attachment. We cover all necessary medical treatments, from emergency care to follow-up visits, giving you peace of mind to focus on your professional development.
+            </div>
+    
+            <div class="benefits-paragraph">
+                <i class="benefits-icon fas fa-tooth"></i>
+                <span class="highlight">Accidental Dental Expenses</span>
+                Dental emergencies can happen unexpectedly. We provide specialized coverage for dental treatments required due to accidents, ensuring your smile stays protected. Our response time is guaranteed within <strong>48 hours</strong> of the incident.
+            </div>
+    
+            <div class="benefits-paragraph">
+                <i class="benefits-icon fas fa-wheelchair"></i>
+                <span class="highlight">Permanent Disability</span>
+                In the unfortunate event of permanent disability caused by workplace accidents, we provide comprehensive financial support to help you adapt and maintain your quality of life. Our coverage includes both partial and total disability scenarios.
+            </div>
+    
+            <div class="benefits-paragraph">
+                <i class="benefits-icon fas fa-shield-alt"></i>
+                <span class="highlight">Accidental Death</span>
+                We understand the importance of family security. Our accidental death coverage provides financial protection for your loved ones, ensuring they receive adequate support during difficult times. The claim process is streamlined for quick disbursement.
+            </div>
+    
+            <div class="benefits-paragraph">
+                <i class="benefits-icon fas fa-hands-helping"></i>
+                <span class="highlight">Last Expense</span>
+                Our last expense coverage helps families manage funeral arrangements without financial strain. We provide immediate assistance and support to ensure dignified arrangements can be made with minimal stress on the family.
+            </div>
+        </div>
     </section>
 
     
@@ -107,8 +127,14 @@
                 <label for="university">University</label>
                 <input type="text" id="university" name="university" required>
             </div>
+             <button type="submit" class="btn">
+        <span class="btn-text">Submit Application</span>
+        <span class="btn-loader" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Processing...
+        </span>
+    </button>
 
-            <button type="submit" class="btn">Proceed to Buy</button>
+           
         </form>
     </section>
     <footer class="footer">
@@ -161,7 +187,7 @@
                         <a href="#" class="social-icon instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-icon whatsapp">
+                        <a href=" https://wa.me/254104353629" class="social-icon whatsapp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -174,6 +200,14 @@
     </footer>
 
     <script src="stude.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+   (function() {
+      emailjs.init("JoVdnPrnSRavQn4gk"); // Remove any spaces
+   })();
+</script>
+ 
 
 </body>
 </html>
